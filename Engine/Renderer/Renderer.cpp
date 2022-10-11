@@ -40,7 +40,7 @@ namespace neu
 
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 3);
-		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
 
 		SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 		SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
@@ -56,7 +56,7 @@ namespace neu
 
 	void Renderer::BeginFrame()
 	{
-		glClearColor(0.53f, 0.81f, 0.98f, 1);
+		glClearColor(0.0f, 0.0f, 0.0f, 1);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
