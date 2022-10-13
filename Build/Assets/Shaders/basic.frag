@@ -1,8 +1,10 @@
 #version 430 core
+in vec3 color;
+out vec4 fcolor;
 
-out vec4 color;
+uniform vec3 tint;
 
 void main()
 {
-	color = vec4(1.0, 1.0, 1.0, 1.0);
+	fcolor = vec4(color * tint, 1.0);
 }
