@@ -29,23 +29,51 @@ glm::vec2 texcoord[]
 	{ 1, 0 },
 	{ 0, 0 }
 };
-/*
-const char* vertex_shader =
-"#version 430 core\n"
-"in vec3 position;"
-"void main() {"
-"  gl_Position = vec4(position, 1.0);"
-"}";
 
+float vertices[] = {
+	-0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+	 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
 
+	-0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+	 0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	-0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	-0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
 
-const char* fragment_shader =
-"#version 430 core\n"
-"out vec4 color;"
-"void main() {"
-"  color = vec4(0.4, 0.2, 1.0, 1.0);"
-"}";
-*/
+	-0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	-0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	-0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+	-0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+
+	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	 0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+
+	-0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	 0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	 0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	-0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+	-0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+
+	-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
+	 0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
+	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	 0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
+	-0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
+	-0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, 0.0f, 1.0f
+};
+
 int main(int argc, char** argv)
 {
 	LOG("Application Started...");
@@ -73,7 +101,12 @@ int main(int argc, char** argv)
 	GLuint tvbo = 0;
 	glGenBuffers(1, &tvbo);
 	glBindBuffer(GL_ARRAY_BUFFER, tvbo);
-	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(glm::vec2), colors, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, 6 * sizeof(glm::vec2), texcoord, GL_STATIC_DRAW);
+
+	GLuint vbo = 0;
+	glGenBuffers(1, &vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, vbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices) , vertices, GL_STATIC_DRAW);
 
 	// create vertex array
 	GLuint vao = 0;
@@ -107,7 +140,7 @@ int main(int argc, char** argv)
 	std::shared_ptr<neu::Texture> texture1 = neu::g_resources.Get<neu::Texture>("textures/lama.png");
 	std::shared_ptr<neu::Texture> texture2 = neu::g_resources.Get<neu::Texture>("textures/wood.png");
 	texture1->Bind();
-	texture2->Bind();
+	//texture2->Bind();
 
 	GLint uniform1 = glGetUniformLocation(program, "scale");
 	GLint uniform2 = glGetUniformLocation(program, "tint");
@@ -115,7 +148,7 @@ int main(int argc, char** argv)
 
 	glUniform3f(uniform2, 1, 0, 0);
 
-	glm::mat4 mx;
+	glm::mat4 mx{ 1 };
 	glUniformMatrix4fv(uniform3, 1, GL_FALSE, glm::value_ptr(mx));
 
 
