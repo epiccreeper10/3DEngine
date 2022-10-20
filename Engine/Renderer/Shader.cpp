@@ -6,7 +6,7 @@ namespace neu
 {
 	Shader::~Shader()
 	{
-		if (!m_shader)
+		if (m_shader)
 		{
 			glDeleteShader(m_shader);
 		}
