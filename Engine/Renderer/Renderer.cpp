@@ -14,8 +14,6 @@ namespace neu
 		SDL_Init(SDL_INIT_VIDEO);
 		TTF_Init();
 		IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
-		m_view = Matrix3x3::identity;
-		m_viewport = Matrix3x3::identity;
 	}
 
 	void Renderer::Shutdown()

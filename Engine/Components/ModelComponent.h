@@ -3,7 +3,9 @@
 
 namespace neu
 {
+	class Renderer;
 	class Model;
+	class Material;
 
 	class ModelComponent : public RenderComponent
 	{
@@ -18,5 +20,6 @@ namespace neu
 
 	public:
 		std::shared_ptr<Model> m_model;
+		std::shared_ptr<Material> m_material;
 	};
 }

@@ -8,14 +8,14 @@ namespace neu
 {
 	struct Transform : public ISerializable
 	{
-		glm::vec3 position;
+		glm::vec3 position{ 0 };
 		glm::vec3 rotation{ 0 };
 		glm::vec3 scale{ 1 };
 
-		glm::mat4 matrix;
+		glm::mat4 matrix{ 1 };
 
 		Transform() = default;
-		Transform(const glm::vec3& position, glm::vec3& rotation, const glm::vec3& scale = {1, 1, 1}) :
+		Transform(const glm::vec3& position, const glm::vec3& rotation, const glm::vec3& scale = {1, 1, 1}) :
 			position{ position },
 			rotation{ rotation },
 			scale{ scale } 

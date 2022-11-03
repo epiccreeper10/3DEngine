@@ -1,4 +1,3 @@
-#include "ModelComponent.h"
 #include "Renderer/Model.h"
 #include "Framework/Actor.h"
 #include "Engine.h"
@@ -12,7 +11,13 @@ namespace neu
 
 	void ModelComponent::Draw(Renderer& renderer)
 	{
-		m_model->Draw(renderer, m_owner->m_transform);
+		m_material->Bind();
+
+		m_material->GetProgram()->SetUniform("model", (glm::mat4)m_owner->m_transform);
+		m_material->GetProgram()->SetUniform("view", renderer.GetView());
+		m_material->GetProgram()->SetUniform("projection", renderer.GetProjection());
+
+		m_model->m_vertexBuffer.Draw();
 	}
 
 	bool ModelComponent::Write(const rapidjson::Value& value) const

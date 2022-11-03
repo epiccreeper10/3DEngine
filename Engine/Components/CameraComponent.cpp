@@ -17,7 +17,7 @@ namespace neu
 
         //m_view = mxTranslation * mxRotation;
 
-        g_renderer.SetViewMatrix(m_view);
+        //g_renderer.SetViewMatrix(m_view);
     }
 
     void CameraComponent::SetViewport(const Vector2& size)
@@ -25,7 +25,7 @@ namespace neu
         Matrix3x3 mxTranslation = Matrix3x3::CreateTranslation(size * 0.5f);
 
         m_viewport = mxTranslation;
-        g_renderer.SetViewportMatrix(m_viewport);
+        //g_renderer.SetViewportMatrix(m_viewport);
     }
 
     bool CameraComponent::Write(const rapidjson::Value& value) const

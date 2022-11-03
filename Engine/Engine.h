@@ -2,6 +2,8 @@
 
 #include "Serialization/Json.h"
 
+#include "Renderer/Model.h"
+
 #include "Core/Memory.h"
 #include "Core/File.h"
 #include "Core/Time.h"
@@ -39,7 +41,6 @@
 #include "Renderer/Text.h"
 #include "Renderer/Font.h"
 #include "Renderer/Texture.h"
-#include "Renderer/Model.h"
 #include "Renderer/Shader.h"
 #include "Renderer/Material.h"
 #include "Renderer/Program.h"

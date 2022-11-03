@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Material">
+      <UniqueIdentifier>{512b778b-da5c-4ddf-8ad2-cac0435be9c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -31,6 +34,9 @@
     </None>
     <None Include="..\Build\Assets\Shaders\basic.prog">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\box.mtrl">
+      <Filter>Header Files\Material</Filter>
     </None>
   </ItemGroup>
 </Project>
