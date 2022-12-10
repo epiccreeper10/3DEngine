@@ -13,8 +13,29 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Material">
-      <UniqueIdentifier>{512b778b-da5c-4ddf-8ad2-cac0435be9c3}</UniqueIdentifier>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{969bcd6a-d02b-4173-970c-69e6332867ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Materials">
+      <UniqueIdentifier>{64007956-7c4a-444a-a859-68a8f46f9aff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Scenes">
+      <UniqueIdentifier>{88ba0d79-0f6f-46eb-9b46-c81561fcb593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shaders">
+      <UniqueIdentifier>{4b6aa0cd-a613-4e4e-8f91-0bad0d22fa04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shaders\FX">
+      <UniqueIdentifier>{ae79abc2-34af-4fa9-a92d-7fb4e4a7d0cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shaders\Lit">
+      <UniqueIdentifier>{37f05ca1-2805-4e98-8be8-5acce250d8ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shaders\Unlit">
+      <UniqueIdentifier>{8f2ad4eb-51b6-4ab4-bfaa-e9935e4f5bc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shaders\PostProcess">
+      <UniqueIdentifier>{0e9e3bfd-89eb-4966-8233-bf4e6a62134f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -23,20 +44,184 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Build\Assets\Materials\Background.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Floor.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Box.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Tree.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\basic_lit.scn">
+      <Filter>Assets\Scenes</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\basic.scn">
+      <Filter>Assets\Scenes</Filter>
+    </None>
     <None Include="..\Build\Assets\Shaders\basic.frag">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="..\Build\Assets\Shaders\basic.vert">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="..\Build\Assets\Shaders\basic.cube">
-      <Filter>Resource Files</Filter>
+      <Filter>Assets\Shaders</Filter>
     </None>
     <None Include="..\Build\Assets\Shaders\basic.prog">
-      <Filter>Resource Files</Filter>
+      <Filter>Assets\Shaders</Filter>
     </None>
-    <None Include="..\Build\Assets\Materials\box.mtrl">
-      <Filter>Header Files\Material</Filter>
+    <None Include="..\Build\Assets\Shaders\basic.vert">
+      <Filter>Assets\Shaders</Filter>
     </None>
+    <None Include="..\Build\Assets\Shaders\basic_lit.frag">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\basic_lit.prog">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\basic_lit.vert">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\basic_phong.frag">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\basic_phong.prog">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\basic_phong.vert">
+      <Filter>Assets\Shaders</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\texture.scn">
+      <Filter>Assets\Scenes</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Multi.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Squirrel.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture.frag">
+      <Filter>Assets\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture.prog">
+      <Filter>Assets\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture.vert">
+      <Filter>Assets\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.frag">
+      <Filter>Assets\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.prog">
+      <Filter>Assets\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Lit\texture_normal.vert">
+      <Filter>Assets\Shaders\Lit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\color.prog">
+      <Filter>Assets\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\color.frag">
+      <Filter>Assets\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.prog">
+      <Filter>Assets\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.vert">
+      <Filter>Assets\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\color.vert">
+      <Filter>Assets\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\Unlit\texture.frag">
+      <Filter>Assets\Shaders\Unlit</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\toon.frag">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\toon.prog">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\toon.vert">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\cubemap.scn">
+      <Filter>Assets\Scenes</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Skybox.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\skybox.frag">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\skybox.prog">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\skybox.vert">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\reflection.frag">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\reflection.prog">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\reflection.vert">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Reflection.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\refraction.frag">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\refraction.prog">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\refraction.vert">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\refraction.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\reflect_refract.frag">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\reflect_refract.prog">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\FX\reflect_refract.vert">
+      <Filter>Assets\Shaders\FX</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\rtt.scn">
+      <Filter>Assets\Scenes</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\rtt.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\PostProcess\postprocess.frag">
+      <Filter>Assets\Shaders\PostProcess</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\PostProcess\postprocess.prog">
+      <Filter>Assets\Shaders\PostProcess</Filter>
+    </None>
+    <None Include="..\Build\Assets\Shaders\PostProcess\postprocess.vert">
+      <Filter>Assets\Shaders\PostProcess</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\postprocess.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Scenes\final.scn">
+      <Filter>Assets\Scenes</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Final_SkyBox.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+    <None Include="..\Build\Assets\Materials\Apple_Tree.mtrl">
+      <Filter>Assets\Materials</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

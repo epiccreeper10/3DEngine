@@ -1,0 +1,10 @@
+{
+  "program": "shaders/Lit/texture.prog",
+  "texture": "textures/Hydr.png",
+  "color": [
+    1,
+    1,
+    1
+  ],
+  "shininess": 100
+} 

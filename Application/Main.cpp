@@ -1,49 +1,8 @@
-#include "Engine.h" 
+#include "Engine.h"
 #include <iostream> 
+#include <Renderer/Program.cpp>
 
-float vertices[] = {
-	-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-	 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-
-	-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-	 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-
-	-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-	-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-
-	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-
-	-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	 0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	 0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	-0.5f, -0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-	-0.5f, -0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-
-	-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f,
-	 0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f,
-	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	 0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,
-	-0.5f,  0.5f,  0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f,
-	-0.5f,  0.5f, -0.5f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f
-};
+#define POST_PROCESS 
 
 int main(int argc, char** argv)
 {
@@ -53,109 +12,129 @@ int main(int argc, char** argv)
 
 	neu::Engine::Instance().Initialize();
 	neu::Engine::Instance().Register();
-	LOG("Engine Initialized");
+	LOG("Engine Initialized...");
 
 	neu::g_renderer.CreateWindow("Neumont", 800, 600);
-	LOG("Engine Window Initilized");
+	LOG("Window Created...");
+	neu::g_gui.Initialize(neu::g_renderer);
 
-	// create vertex buffer
+	// create framebuffer texture
+	auto texture = std::make_shared<neu::Texture>();
+	texture->CreateTexture(1024, 1024);
+	neu::g_resources.Add<neu::Texture>("fb_texture", texture);
 
-	GLuint vbo = 0;
-	auto m = neu::g_resources.Get<neu::Model>("models/ogre.obj");
+	// create framebuffer
+	auto framebuffer = neu::g_resources.Get<neu::Framebuffer>("framebuffer", "fb_texture");
+	framebuffer->Unbind();
 
+	// load scene 
+	auto scene = neu::g_resources.Get<neu::Scene>("scenes/almost.scn");
 
-	std::shared_ptr<neu::VertexBuffer> vb = neu::g_resources.Get<neu::VertexBuffer>("box");
-	vb->CreateVertexBuffer(sizeof(vertices), 36, vertices);
-	vb->SetAttribute(0, 3, 8 * sizeof(float), 0);
-	vb->SetAttribute(1, 3, 8 * sizeof(float), 3 * sizeof(float));
-	vb->SetAttribute(2, 2, 8 * sizeof(float), 6 * sizeof(float));
-
-	// create vertex array
-	GLuint vao = 0;
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
-
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
-
-	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-
-	glEnableVertexAttribArray(2);
-	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-
-	// create material
-	std::shared_ptr<neu::Material> material = neu::g_resources.Get<neu::Material>("materials/box.mtrl");
-	material->Bind();
-
-	glm::mat4 model{ 1 };
-	glm::mat4 projection = glm::perspective(45.0f, neu::g_renderer.GetWidth() / (float)neu::g_renderer.GetHeight(), 0.01f, 100.0f);
-
-	glm::vec3 cameraPosition{ 0, 0, 2 };
-
-	float speed = 3;
-
-	neu::Transform transforms[] =
-	{
-		{ {0,0,0}, { 0, 90, 0 } },
-		{ {3,1,0}, { 0, 75, 0 } },
-		{ {0,3,1}, { 55, 0, 30 } },
-	};
-
+	glm::vec3 rot = {0,0,0};
+	float interpolation = 0;
+	float ri = 1.4;
 	bool quit = false;
 	while (!quit)
 	{
-		// add input to move camera
-		if (neu::g_inputSystem.GetKeyDown(neu::key_left))
-		{
-			cameraPosition += glm::vec3{ -1 * (float)neu::g_time.deltaTime, 0, 0 };
-		}
-		if (neu::g_inputSystem.GetKeyDown(neu::key_right))
-		{
-			cameraPosition += glm::vec3{ 1 * (float)neu::g_time.deltaTime, 0, 0 };
-		}
-		if (neu::g_inputSystem.GetKeyDown(neu::key_up))
-		{
-			cameraPosition += glm::vec3{ 0, 1 * (float)neu::g_time.deltaTime, 0 };
-		}
-		if (neu::g_inputSystem.GetKeyDown(neu::key_down))
-		{
-			cameraPosition += glm::vec3{ 0, -1 * (float)neu::g_time.deltaTime, 0 };
-		}
-		if (neu::g_inputSystem.GetKeyDown(neu::key_enter))
-		{
-			cameraPosition += glm::vec3{ 0, 0, -1 * (float)neu::g_time.deltaTime };
-		}
-		if (neu::g_inputSystem.GetKeyDown(neu::key_space))
-		{
-			cameraPosition += glm::vec3{ 0, 0, 1 * (float)neu::g_time.deltaTime };
-		}
 		neu::Engine::Instance().Update();
+		neu::g_gui.BeginFrame(neu::g_renderer);
 
-		glm::mat4 view = glm::lookAt(cameraPosition, cameraPosition + glm::vec3{ 0, 0, -1 }, glm::vec3{ 0, 1, 0 });
+		if (neu::g_inputSystem.GetKeyState(neu::key_escape) == neu::InputSystem::KeyState::Pressed) quit = true;
 
-		model = glm::eulerAngleXYZ(0.0f, (float)(neu::g_time.time), 0.0f);
-
-		glm::mat4 mvp = projection * view * model;
-		material->GetProgram()->SetUniform("mvp", mvp);
-
-		neu::g_renderer.BeginFrame();
-
-		for (size_t i = 0; i < 4; i++)
+		auto actor = scene->GetActorFromName("Light");
+		if (actor)
 		{
-
-			glm::mat4 mvp = projection * view * (glm::mat4)transforms[i];
-			material->GetProgram()->SetUniform("mvp", mvp);
-			vb->Draw();
+			// move light using sin wave 
+			actor->m_transform.position = rot;
 		}
-		m->m_vertexBuffer.Draw();
+		auto actor2 = scene->GetActorFromName("Ogre");
+		if (actor2)
+		{
+			actor2->m_transform.rotation = math::EulerToQuaternion(rot);
+		}
+
+		auto actor5 = scene->GetActorFromName("Dog");
+		if (actor5)
+		{
+			actor5->m_transform.rotation = math::EulerToQuaternion(rot);
+		}
+
+		auto actor6 = scene->GetActorFromName("RTT");
+
+		auto actor3 = scene->GetActorFromName("Light2");
+		auto actor4 = scene->GetActorFromName("Light3");
+
+		auto program = neu::g_resources.Get<neu::Program>("shaders/fx/reflect_refract.prog");
+		if (program)
+		{
+			program->Use();
+			program->SetUniform("interpolation", interpolation);
+			program->SetUniform("ri", ri);
+		}
+
+		auto program1 = neu::g_resources.Get<neu::Program>("shaders/postprocess/postprocess.prog");
+		if (program1)
+		{
+			program->Use();
+			program->SetUniform("offset", neu::g_time.time);
+		}
+
+		ImGui::Begin("Hello!");
+		ImGui::DragFloat3("Rotation", &rot[0]);
+		ImGui::SliderFloat("ri", &ri, 1, 3);
+		ImGui::SliderFloat("interpolation", &interpolation, 0, 1);
+		ImGui::End();
+
+		scene->Update();
+
+#ifdef POST_PROCESS 
+		// don't draw post process actor when rendering to the framebuffer 
+		{
+			auto actor = scene->GetActorFromName("PostProcess");
+			if (actor)
+			{
+				actor->SetActive(false);
+			}
+		}
+		// render pass 1 (render scene to framebuffer) 
+		neu::g_renderer.SetViewport(0, 0, framebuffer -> GetSize().x, framebuffer->GetSize().y);
+		framebuffer->Bind();
+		neu::g_renderer.BeginFrame();
+		scene->PreRender(neu::g_renderer);
+		scene->Render(neu::g_renderer);
+		framebuffer->Unbind();
+
+		// render pass 2 (render to screen) 
+		neu::g_renderer.RestoreViewport();
+		neu::g_renderer.BeginFrame();
+		scene->PreRender(neu::g_renderer);
+
+		// draw only the post process actor to the screen 
+		{
+			auto actor = scene->GetActorFromName("PostProcess");
+			if (actor)
+			{
+				actor->SetActive(true);
+				actor->Draw(neu::g_renderer);
+			}
+		}
+#else 
+		neu::g_renderer.BeginFrame();
+		scene->PreRender(neu::g_renderer);
+		scene->Render(neu::g_renderer);
+#endif // POST_PROCESS 
+
+		neu::g_gui.Draw();
 
 		neu::g_renderer.EndFrame();
+
+		neu::g_gui.EndFrame();
 	}
-	LOG("Program Ended");
+
+	scene->RemoveAll();
+
 	neu::Engine::Instance().Shutdown();
 
 	return 0;
 }
+

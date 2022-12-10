@@ -1,9 +1,9 @@
-#pragma once
-#include "Resource/resource.h"
-#include "renderer.h"
-#include "Math/MathUtils.h"
-#include <map>
-#include <vector>
+#pragma once 
+#include "Resource/Resource.h" 
+#include "Renderer.h" 
+#include "Math/MathUtils.h" 
+#include <map> 
+#include <vector> 
 
 namespace neu
 {
@@ -20,24 +20,25 @@ namespace neu
 		void Link();
 		void Use();
 
-		// uniforms
+		// uniforms 
+		void SetUniform(const std::string& name, float value);
+		void SetUniform(const std::string& name, const glm::vec3& value);
+		void SetUniform(const std::string& name, const glm::mat4& value);
+
 		void SetUniform(const std::string& name, int value);
 		void SetUniform(const std::string& name, unsigned int value);
-		void SetUniform(const std::string& name, float value);
 		void SetUniform(const std::string& name, bool value);
 
 		void SetUniform(const std::string& name, const glm::vec2& value);
-		void SetUniform(const std::string& name, const glm::vec3& value);
 		void SetUniform(const std::string& name, const glm::vec4& value);
 
 		void SetUniform(const std::string& name, const glm::mat3& value);
-		void SetUniform(const std::string& name, const glm::mat4& value);
 
 	private:
 		GLint GetUniform(const std::string& name);
 
 	public:
-		GLuint m_program{ 0 };
+		GLuint m_program = 0;
 		std::vector<std::shared_ptr<Shader>> m_shaders;
 		std::map<std::string, GLint> m_uniforms;
 	};

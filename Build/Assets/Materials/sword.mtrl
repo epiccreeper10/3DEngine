@@ -1,0 +1,10 @@
+{
+  "program": "shaders/basic_phong.prog",
+  "texture": "textures/Sword_albedo.jpg",
+  "color": [
+    1,
+    1,
+    1
+  ],
+  "shininess": 256
+} 

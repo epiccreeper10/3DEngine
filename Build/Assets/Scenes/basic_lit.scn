@@ -1,0 +1,160 @@
+{
+  "actors": [
+    {
+      "type": "Actor",
+      "name": "Ogre",
+      "transform": {
+        "position": [
+          1,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/ogre.obj",
+          "material_name": "Materials/Box.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Spot",
+      "transform": {
+        "position": [
+          -1,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/spot.obj",
+          "material_name": "Materials/Tree.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Floor",
+      "transform": {
+        "position": [
+          0,
+          -1,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/Floor.obj",
+          "material_name": "Materials/Floor.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "BG",
+      "transform": {
+        "position": [
+          0,
+          0,
+          35
+        ],
+        "scale": [
+          75,
+          75,
+          75
+        ],
+        "rotation": [
+          90,
+          0,
+          0
+        ]
+      },
+      "components": [
+        {
+          "type": "ModelComponent",
+          "model_name": "Models/plane.obj",
+          "material_name": "Materials/Background.mtrl"
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Light",
+      "transform": {
+        "position": [
+          -2,
+          0,
+          -5
+        ]
+      },
+      "components": [
+        {
+          "type": "LightComponent",
+          "color": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Actor",
+      "name": "Camera",
+      "transform": {
+        "position": [
+          0,
+          0,
+          -4
+        ]
+      },
+      "components": [
+        {
+          "type": "CameraComponent",
+          "fov": 45,
+          "near": 0.1,
+          "far": 100
+        },
+        {
+          "type": "CameraController",
+          "speed": 4
+        }
+      ]
+    }
+  ] 
+} 

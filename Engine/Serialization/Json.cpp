@@ -266,7 +266,6 @@ namespace neu::json
 		}
 
 		return true;
-
 	}
 
 	bool Get(const rapidjson::Value& value, const std::string& name, glm::vec3& data)
@@ -297,7 +296,6 @@ namespace neu::json
 
 		return true;
 	}
-}
 
 	bool Get(const rapidjson::Value& value, const std::string& name, glm::vec4& data)
 	{
@@ -327,6 +325,5 @@ namespace neu::json
 
 		return true;
 	}
-	
 
-
+}
